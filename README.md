@@ -121,7 +121,7 @@ OSPF-ACL-Multi-ISP-Network/
 | [05. LSA Type](./docs/05-lsa-type.md) | Type 1~5 (Router/Network/Summary/ASBR-Summary/External) |
 | [06. Virtual-Link](./docs/06-virtual-link.md) | Backbone 단절 시 우회 연결 |
 | [07. OSPF 인증](./docs/07-ospf-authentication.md) | Plain Text / MD5, Neighbor / Area 인증 |
-| [08. ACL 이론](./docs/08-acl-theory.md) | Standard(1~99) / Extended(100~199) |
+| [08. ACL 이론](./docs/08-acl-theory.md) | Standard(1 ~ 99) / Extended(100 ~ 199) |
 
 ### OSPF Cost 계산식
 
