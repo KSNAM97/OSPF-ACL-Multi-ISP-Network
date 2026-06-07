@@ -136,7 +136,7 @@ conf t
 !
 int fa0/0
 description To SWX
-ip address 168.126.63.254 255.255.255.0
+ip address 168.126.64.254 255.255.255.0
 no shutdown
 !
 int s1/0
@@ -165,7 +165,7 @@ conf t
 !
 int fa0/0
 description To SW1
-ip address 198.210.10.254 255.255.255.0
+ip address 198.210.10.248 255.255.255.0
 no shutdown
 !
 int s1/0
