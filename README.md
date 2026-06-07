@@ -332,12 +332,12 @@ debug ip ospf packet                # OSPF Packet 디버그 (인증 검증)
 ## 🛠️ 사용 도구
 
 | 도구 | 용도 |
-| --- | --- |
-| **GNS3** | 네트워크 시뮬레이션 |
-| **Cisco IOS (c3745)** | 라우터 OS |
-| **Cisco CLI** | 라우터 명령어 입력 |
-| **MobaXterm / PuTTY** | 콘솔 접속 |
-| **Git / GitHub** | 형상 관리 |
+|------|------|
+| **GNS3** | 네트워크 시뮬레이터 |
+| **Cisco IOS (c3745)** | 라우터 운영체제 |
+| **Cisco CLI** | 라우터 설정 명령어 입력 |
+| **MobaXterm** | 콘솔 접속 터미널 |
+| **Git / GitHub** | 형상 관리 및 포트폴리오 |
 
 ---
 
