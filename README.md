@@ -107,17 +107,6 @@ Cost = Reference-Bandwidth(기본 10^8) / 인터페이스 Bandwidth
 - Serial (T1)     : 10^9 / 1.544M   = 647
 ```
 
-### LSA Type 비교표
-
-| LSA Type | 생성 주체 | 용도 | 전파 범위 | Routing Table 표기 |
-| :---: | :---: | :--- | :--- | :---: |
-| Type-1 | 모든 OSPF Router | 자기 Area 내부 정보 | 동일 Area | `O` |
-| Type-2 | DR | DR이 속한 네트워크 정보 | DR이 포함된 Network | 표기 없음 |
-| Type-3 | ABR | 다른 Area 정보 요약 | ABR이 속한 Area | `O IA` |
-| Type-4 | ABR | ASBR 위치 광고 | ABR이 속한 Area | 표기 없음 |
-| Type-5 | ASBR | 외부(재분배) 네트워크 | ASBR이 속한 Area | `O E1`, `O E2` |
-
----
 
 ## 🔍 검증 명령어
 
