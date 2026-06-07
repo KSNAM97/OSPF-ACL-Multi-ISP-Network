@@ -1,0 +1,220 @@
+EX2) Topology를 참조하여 모든 네트워크 구간에 IP 주소를 할당해야한다.
+ .LAN 구간에서는 Etherent Protocol을 사용하여 통신해야한다.
+ .WAN 구간에서는 HDLC Protocol을 사용하여 통신해야한다.
+  (대역폭은 Topology 참조)
+ .각 Router에서 Routing Table 확인 및 내부 네트워크와 Next-hop 구간 통신 확인
+ .WAN 구간은 전부 HDLC이기 때문에 encapsulation hdlc 생략하였다.
+	
+
+
+	
+
+	#ISP-1
+
+en
+conf t
+!
+int s1/1
+description To R1
+bandwidth 128
+ip address 211.116.41.34 255.255.255.252
+clock rate 128000
+no shutdown
+!
+int s1/0
+description To ISP-6
+bandwidth 128
+ip address 211.116.41.37 255.255.255.252
+no shutdown
+!
+int fa0/0
+description To ISP-2
+ip address 211.116.41.57 255.255.255.252
+no shutdown
+!
+end
+!
+wr
+!
+
+	#ISP-2
+en
+conf t
+!
+int fa0/1
+description To ISP-1
+ip address 211.116.41.58 255.255.255.252
+no shutdown
+!
+int fa0/0
+description To ISP-SW
+ip address 211.116.41.65 255.255.255.248
+no shutdown
+!
+end
+!
+wr
+!
+
+	#ISP-3
+en
+conf t
+!
+int fa0/0
+description To ISP-SW
+ip address 211.116.41.66 255.255.255.248
+no shutdown
+!
+int fa0/1
+description To SWY
+ip address 168.126.63.254 255.255.255.0
+no shutdown
+!
+end
+!
+wr
+!
+
+
+	#ISP-4
+en
+conf t
+!
+int fa0/0
+description To ISP-SW
+ip address 211.116.41.67 255.255.255.248
+no shutdown
+!
+int fa0/1
+description To ISP-5
+ip address 211.116.41.53 255.255.255.252
+no shutdown
+!
+end
+!
+wr
+!
+
+
+	#ISP-5
+en
+conf t
+!
+int fa0/0
+description To ISP-4
+ip address 211.116.41.54 255.255.255.252
+no shutdown
+!
+int s1/0
+description To R3
+bandwidth 128
+ip address 211.116.41.49 255.255.255.252
+clock rate 128000
+no shutdown
+!
+int s1/1
+description To ISP-6
+bandwidth 128
+ip address 211.116.41.41 255.255.255.252
+no shutdown
+!
+int s1/2
+description To R2
+bandwidth 64
+ip address 211.116.41.45 255.255.255.252
+clock rate 64000
+no shutdown
+!
+end
+!
+wr
+!
+
+	#ISP-6
+en
+conf t
+!
+int fa0/0
+description To SWX
+ip address 168.126.63.254 255.255.255.0
+no shutdown
+!
+int s1/0
+description To ISP-5
+bandwidth 128
+ip address 211.116.41.42 255.255.255.252
+clock rate 128000
+no shutdown
+!
+int s1/1
+description To ISP-1
+bandwidth 128
+ip address 211.116.41.38 255.255.255.252
+clock rate 128000
+no shutdown
+!
+end
+!
+wr
+!
+
+
+	#R1
+en
+conf t
+!
+int fa0/0
+description To SW1
+ip address 198.210.10.254 255.255.255.0
+no shutdown
+!
+int s1/0
+description To ISP-1
+bandwidth 128
+ip address 211.116.41.33 255.255.255.252
+no shutdown
+!
+end
+!
+wr
+!
+
+	#R2
+en
+conf t
+!
+int fa0/0
+description To SW4
+ip address 100.10.1.254 255.255.255.0
+no shutdown
+!
+int s1/3
+description To ISP-5
+bandwidth 64
+ip address 211.116.41.46 255.255.255.252
+no shutdown
+!
+end
+!
+wr
+!
+
+	#R3
+en
+conf t
+!
+int fa0/0
+description To SW3
+ip address 100.10.2.254 255.255.255.0
+no shutdown
+!
+int s1/1
+description To ISP-5
+bandwidth 128
+ip address 211.116.41.50 255.255.255.252
+no shutdown
+!
+end
+!
+wr
+!
