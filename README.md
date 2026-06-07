@@ -127,7 +127,7 @@ OSPF-ACL-Multi-ISP-Network/
 | # | 실습 내용 | Preconfig 파일 |
 | :---: | --- | --- |
 | **EX1** | 라우터 기본 설정 (Loopback / IP / Telnet / Enable 패스워드) | [`01-ospf-loopback-preconfig.txt`](./preconfig/01-ospf-loopback-preconfig.txt) |
-| **EX2** | LAN(Ethernet) / WAN(HDLC) IP 할당 및 Next-hop 통신 확인 | *(추가 예정)* |
+| **EX2** | LAN(Ethernet) / WAN(HDLC) IP 할당 및 Next-hop 통신 확인 |[`02-ospf-router-ip-preconfig.txt`] (./preconfig/02-ospf-router-ip-preconfig.txt)|
 | **EX3** | OSPF Multi-Area 구성 + ISP-3 DR 선출 + Loopback Area 분리 | *(추가 예정)* |
 | **EX4** | ISP-1에서 Extended ACL로 R1 → R2/R3 트래픽 제어 | *(추가 예정)* |
 | **EX5** | Routing Table / Database Table / LSA-Type 검증 | [`verification-commands.md`](./verification/verification-commands.md) |
