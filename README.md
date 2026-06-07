@@ -344,3 +344,11 @@ debug ip ospf packet                # OSPF Packet 디버그 (인증 검증)
 ## 📄 License
 
 [MIT License](./LICENSE)
+
+<div align="center">
+
+**작성자**: [KSNAM97](https://github.com/KSNAM97)  
+**작성일**: 2026.06  
+**프로젝트 유형**: 네트워크 엔지니어링 포트폴리오
+
+</div>
