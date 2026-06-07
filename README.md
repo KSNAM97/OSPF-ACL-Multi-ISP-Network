@@ -289,7 +289,7 @@ Extended IP access list 101
 
 📝 **상세 검증 자료**:
 - [🔍 검증 명령어 가이드](./verification/verification-commands.md)
-- [📁 단계별 사전 설정](./preconfig/01-ospf-loopback-preconfig.txt)
+- [📁 단계별 사전 설정](./preconfig/)
 
 ---
 
