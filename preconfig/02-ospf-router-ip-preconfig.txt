@@ -165,7 +165,7 @@ conf t
 !
 int fa0/0
 description To SW1
-ip address 198.210.10.248 255.255.255.224
+ip address 198.210.10.30 255.255.255.224
 no shutdown
 !
 int s1/0
