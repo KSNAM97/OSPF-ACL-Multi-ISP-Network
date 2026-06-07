@@ -93,7 +93,7 @@ OSPF-ACL-Multi-ISP-Network/
 2. 🛠️ **실습 진행** → [`preconfig/`](./preconfig/) 폴더의 설정 파일 따라 입력
 3. 🔍 **결과 검증** → [`verification/verification-commands.md`](./verification/verification-commands.md) 명령어로 확인
 
-
+---
 ## 📚 OSPF 핵심 이론 요약 (docs/)
 
 자세한 내용은 `docs/` 폴더를 참고하세요.
@@ -109,7 +109,7 @@ OSPF-ACL-Multi-ISP-Network/
 | [07. OSPF 인증](./docs/07-ospf-authentication.md) | Plain Text / MD5, Neighbor / Area 인증 |
 | [08. ACL 이론](./docs/08-acl-theory.md) | Standard(1 ~ 99) / Extended(100 ~ 199) |
 
-
+---
 
 ## 💡 학습 포인트
 
