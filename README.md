@@ -101,71 +101,6 @@ OSPF-MultiArea-ACL-Lab/
 └── README.md
 ```
 
----
-
-## 🚀 빠른 시작
-
-### 1단계: 라우터 사전 설정 (콘솔/Telnet/Enable 패스워드)
-
-```cisco
-en
-conf t
- no ip domain-lookup
- hostname R1
-!
-line con 0
- logging sync
- exec-timeout 0 0
-!
-line vty 0 4
- password ciscovty
- login
-!
-enable secret ciscoen
-!
-end
-```
-
-### 2단계: OSPF 구성 예시 (R2 - Area 210 + ABR)
-
-```cisco
-router ospf 100
- router-id 2.2.2.2
- passive-interface default
- no passive-interface s1/3
- no passive-interface f0/0
- network 100.10.1.0 0.0.0.255 area 210
- network 210.116.41.44 0.0.0.3 area 210
-```
-
-### 3단계: ISP-3 DR 고정 (BDR 미선출)
-
-```cisco
-! ISP-3 (DR이 될 라우터)
-interface f0/0
- ip ospf priority 255
-!
-! ISP-2, ISP-4 (DROTHER로 만들기)
-interface f0/0
- ip ospf priority 0
-```
-
-### 4단계: ISP-1에서 ACL 적용 (EX4)
-
-```cisco
-! ISP-1
-access-list 101 deny tcp host 198.210.10.1 host 110.11.2.2 eq 23
-access-list 101 deny tcp host 198.210.10.1 host 100.10.1.1 eq 80
-access-list 101 deny icmp host 198.210.10.2 host 110.11.3.3
-access-list 101 deny tcp host 198.210.10.2 host 200.20.2.2 eq 80
-access-list 101 permit ospf any any
-access-list 101 permit ip any any
-!
-interface s1/1
- ip access-group 101 in
-```
-
----
 
 ## 📚 OSPF 핵심 이론 요약 (docs/)
 
@@ -181,7 +116,6 @@ interface s1/1
 | [06. Virtual-Link](./docs/06-virtual-link.md) | Backbone 단절 시 우회 연결 |
 | [07. OSPF 인증](./docs/07-ospf-authentication.md) | Plain Text / MD5, Neighbor / Area 인증 |
 | [08. ACL 이론](./docs/08-acl-theory.md) | Standard(1~99) / Extended(100~199) |
-| [09. EX4 ACL 구현](./docs/09-ex4-acl-implementation.md) | 실습 EX4 단계별 구현 |
 
 ### OSPF Cost 계산식
 
