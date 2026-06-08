@@ -17,19 +17,19 @@ conf t
 int s1/1
 description To R1
 bandwidth 128
-ip address 211.116.41.34 255.255.255.252
+ip address 210.116.41.34 255.255.255.252
 clock rate 128000
 no shutdown
 !
 int s1/0
 description To ISP-6
 bandwidth 128
-ip address 211.116.41.37 255.255.255.252
+ip address 210.116.41.37 255.255.255.252
 no shutdown
 !
 int fa0/0
 description To ISP-2
-ip address 211.116.41.57 255.255.255.252
+ip address 210.116.41.57 255.255.255.252
 no shutdown
 !
 end
@@ -43,12 +43,12 @@ conf t
 !
 int fa0/1
 description To ISP-1
-ip address 211.116.41.58 255.255.255.252
+ip address 210.116.41.58 255.255.255.252
 no shutdown
 !
 int fa0/0
 description To ISP-SW
-ip address 211.116.41.65 255.255.255.248
+ip address 210.116.41.65 255.255.255.248
 no shutdown
 !
 end
@@ -62,7 +62,7 @@ conf t
 !
 int fa0/0
 description To ISP-SW
-ip address 211.116.41.66 255.255.255.248
+ip address 210.116.41.66 255.255.255.248
 no shutdown
 !
 int fa0/1
@@ -82,12 +82,12 @@ conf t
 !
 int fa0/0
 description To ISP-SW
-ip address 211.116.41.67 255.255.255.248
+ip address 210.116.41.67 255.255.255.248
 no shutdown
 !
 int fa0/1
 description To ISP-5
-ip address 211.116.41.53 255.255.255.252
+ip address 210.116.41.53 255.255.255.252
 no shutdown
 !
 end
@@ -102,26 +102,26 @@ conf t
 !
 int fa0/0
 description To ISP-4
-ip address 211.116.41.54 255.255.255.252
+ip address 210.116.41.54 255.255.255.252
 no shutdown
 !
 int s1/0
 description To R3
 bandwidth 128
-ip address 211.116.41.49 255.255.255.252
+ip address 210.116.41.49 255.255.255.252
 clock rate 128000
 no shutdown
 !
 int s1/1
 description To ISP-6
 bandwidth 128
-ip address 211.116.41.41 255.255.255.252
+ip address 210.116.41.41 255.255.255.252
 no shutdown
 !
 int s1/2
 description To R2
 bandwidth 64
-ip address 211.116.41.45 255.255.255.252
+ip address 210.116.41.45 255.255.255.252
 clock rate 64000
 no shutdown
 !
@@ -142,14 +142,14 @@ no shutdown
 int s1/0
 description To ISP-5
 bandwidth 128
-ip address 211.116.41.42 255.255.255.252
+ip address 210.116.41.42 255.255.255.252
 clock rate 128000
 no shutdown
 !
 int s1/1
 description To ISP-1
 bandwidth 128
-ip address 211.116.41.38 255.255.255.252
+ip address 210.116.41.38 255.255.255.252
 clock rate 128000
 no shutdown
 !
@@ -171,7 +171,7 @@ no shutdown
 int s1/0
 description To ISP-1
 bandwidth 128
-ip address 211.116.41.33 255.255.255.252
+ip address 210.116.41.33 255.255.255.252
 no shutdown
 !
 end
@@ -191,7 +191,7 @@ no shutdown
 int s1/3
 description To ISP-5
 bandwidth 64
-ip address 211.116.41.46 255.255.255.252
+ip address 210.116.41.46 255.255.255.252
 no shutdown
 !
 end
@@ -211,7 +211,7 @@ no shutdown
 int s1/1
 description To ISP-5
 bandwidth 128
-ip address 211.116.41.50 255.255.255.252
+ip address 210.116.41.50 255.255.255.252
 no shutdown
 !
 end
