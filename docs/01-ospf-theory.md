@@ -56,7 +56,7 @@ Cost = Reference-Bandwidth / Interface-Bandwidth
 | FastEthernet | 100 Mbps | 10^8 / 10^8 | **1** |
 | Ethernet | 10 Mbps | 10^8 / 10^7 | **10** |
 | Serial (T1) | 1.544 Mbps | 10^8 / 1,544,000 | **64** |
-| GigabitEthernet | 1 Gbps | 10^8 / 10^9 = 0.1 → **1** | 1 |
+| GigabitEthernet | 1 Gbps | 10^8 / 10^9 = 0.1 (최솟값 1로 강제) | **1** |
 
 > ⚠️ **문제점**: FastEthernet과 GigabitEthernet 모두 Cost=1로 동일하게 인식됨
 
