@@ -245,7 +245,7 @@ Down → Init → 2-Way → ExStart → Exchange → Loading → Full
 ```
 R1# show ip ospf neighbor
 Neighbor ID    Pri   State       Dead Time   Address          Interface
-1.1.1.1          1   FULL/  -    00:00:35    211.116.41.33    Serial1/0
+1.1.1.1          1   FULL/  -    00:00:35    210.116.41.33    Serial1/0
 ```
 
 ### 📍 ISP-3 Multi-Access 구간 DR 선출 확인 (BDR 미선출)
