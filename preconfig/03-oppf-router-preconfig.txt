@@ -1,0 +1,207 @@
+EX3) OSPF Routing Protocol을 사용하여 모든 네트워크 구간에서 통신되도록 설정하시오
+ .OSPF Process = 100 , Area = Topology 참조
+ .Router-ID = [R1 , R2 , R3 = x.x.x.x  : x = Router번호] , [ISP-1 ~ ISP-6 = 1x.1x.1x.1x  : x = Router번호]
+ .OSPF 라우팅 업데이트가 필요한 Interface로만 OSPF Packet이 송신되어야 한다.
+ .ISP-2 , ISP-3 , ISP-4 Multi access환경에서
+  ISP-3이 DR로 선출되어야하며 BDR은 선출하지 않아야한다.
+ .ISP-1 ~ ISP-6의 Loopback 0 네트워크는 Area 0에 포함되어야 한다.
+ .ISP-1의 Loopback 1 네트워크는 Area 100에 포함되어야 한다.
+ .ISP-5의 Loopback 1 네트워크는 Area 210에 포함되어야 한다.
+
+	#ISP-1
+
+en
+conf t
+!
+router ospf 100
+ router-id 11.11.11.11
+ passive-interface default
+ no passive-interface s1/0
+ no passive-interface s1/1
+ no passive-interface fa0/0
+ network 210.116.41.32 0.0.0.3 area 100
+ network 210.116.41.56 0.0.0.3 area 0
+ network 210.116.41.36 0.0.0.3 area 0
+ network 110.11.11.1 0.0.0.0 area 0
+ network 220.22.21.1 0.0.0.0 area 100
+!
+end
+!
+wr
+!
+
+
+	#ISP-2
+
+en
+conf t
+!
+router ospf 100
+ router-id 12.12.12.12
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface fa0/1
+ network 210.116.41.56 0.0.0.3 area 0
+ network 210.116.41.64 0.0.0.7 area 0
+ network 110.11.12.2 0.0.0.0 area 0
+!
+exit
+!
+ interface fa0/0
+ ip ospf priority 0 
+!
+end
+!
+wr
+!
+
+	
+
+	#ISP-3
+
+en
+conf t
+!
+router ospf 100
+ router-id 13.13.13.13
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface fa0/1
+ network 168.126.63.0 0.0.0.255 area 0
+ network 210.116.41.64 0.0.0.7 area 0
+ network 110.11.13.3 0.0.0.0 area 0
+!
+ interface fa0/0
+ ip ospf priority 255
+!
+end
+!
+wr
+!
+
+	#ISP-4
+
+en
+conf t
+!
+router ospf 100
+ router-id 14.14.14.14
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface fa0/1
+ network 210.116.41.52 0.0.0.3 area 0
+ network 210.116.41.64 0.0.0.7 area 0
+ network 110.11.14.4 0.0.0.0 area 0
+!
+exit
+!
+ interface fa0/0
+ ip ospf priority 0 
+!
+end
+!
+wr
+!
+
+	#ISP-5
+
+en
+conf t
+!
+router ospf 100
+ router-id 15.15.15.15
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface s1/0
+ no passive-interface s1/1
+ no passive-interface s1/2
+ network 210.116.41.52 0.0.0.3 area 0
+ network 210.116.41.48 0.0.0.3 area 210
+ network 210.116.41.44 0.0.0.3 area 210
+ network 210.116.41.40 0.0.0.3 area 0
+ network 110.11.15.5 0.0.0.0 area 0
+ network 220.22.25.5 0.0.0.0 area 210
+!
+end
+!
+wr
+!
+
+
+	#ISP-6
+
+en
+conf t
+!
+router ospf 100
+ router-id 16.16.16.16
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface s1/0
+ no passive-interface s1/1
+ network 210.116.41.36 0.0.0.3 area 0
+ network 210.116.41.40 0.0.0.3 area 0
+ network 168.126.64.0 0.0.0.255 area 0
+ network 110.11.16.6 0.0.0.0 area 0
+!
+end
+!
+wr
+!
+
+
+
+ 	# R1
+en
+conf t
+!
+router ospf 100
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface s1/0
+ no passive-interface fa0/0
+ network 110.11.1.1 0.0.0.0 area 100
+ network 198.210.10.0 0.0.0.31  area 100
+ network 210.116.41.32 0.0.0.3  area 100
+!
+end
+!
+wr
+!
+
+
+	# R2
+en
+conf t
+!
+router ospf 100
+ router-id 2.2.2.2
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface s1/3
+ network 100.10.1.0 0.0.0.255 area 210
+ network 110.11.2.2 0.0.0.0  area 210
+ network 210.116.41.44 0.0.0.3  area 210
+!
+end
+!
+wr
+!
+
+	# R3
+en
+conf t
+!
+router ospf 100
+ router-id 3.3.3.3
+ passive-interface default
+ no passive-interface fa0/0
+ no passive-interface s1/1
+ network 100.10.2.0 0.0.0.255 area 210
+ network 110.11.3.3 0.0.0.0  area 210
+ network 210.116.41.48 0.0.0.3  area 210
+!
+end
+!
+wr
+!
