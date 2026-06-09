@@ -22,7 +22,7 @@ line vty 0 4
 pass ciscovty
 login
 !
-enable pass ciscoen
+enable secret ciscoen
 !
 end
 !
@@ -46,7 +46,7 @@ line vty 0 4
 pass ciscovty
 login
 !
-enable pass ciscoen
+enable secret ciscoen
 !
 end
 !
@@ -70,7 +70,7 @@ line vty 0 4
 pass ciscovty
 login
 !
-enable pass ciscoen
+enable secret ciscoen
 !
 end
 !
