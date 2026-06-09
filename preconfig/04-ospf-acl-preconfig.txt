@@ -14,7 +14,7 @@ access-list 101 deny tcp host 198.210.10.1  host 110.11.2.2 eq 23
 access-list 101 deny tcp host 198.210.10.1  host 100.10.1.1 eq 80
 access-list 101 deny icmp host 198.210.10.2  host 110.11.3.3
 access-list 101 deny tcp host 198.210.10.2  host 100.10.2.2 eq 80
-access-list 101 permit ip any any
+access-list 101 permit ospf any any
 !
 interface serial 1/1
  ip access-group 101 in
