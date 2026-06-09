@@ -77,8 +77,11 @@ OSPF-ACL-Multi-ISP-Network/
 │   ├── 06-virtual-link.md
 │   ├── 07-ospf-authentication.md
 │   └── 08-acl-theory.md
-├── preconfig/                         # 단계별 실습 사전 설정
-│   └── 01-ospf-loopback-preconfig.txt
+├── preconfig/                                # 단계별 실습 사전 설정
+│   ├── 01-ospf-loopback-preconfig.txt
+│   ├── 02-ospf-router-ip-preconfig.txt
+│   ├── 03-ospf-router-preconfig.txt
+│   └── 04-ospf-acl-preconfig.txt
 ├── verification/                      # 검증 명령어 모음
 │   └── verification-commands.md
 ├── topology/
