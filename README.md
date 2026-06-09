@@ -280,7 +280,7 @@ Extended IP access list 101
     10 deny tcp host 198.210.10.1 host 110.11.2.2 eq telnet (5 matches)   ← 차단 카운트 ✓
     20 deny tcp host 198.210.10.1 host 100.10.1.1 eq www (3 matches)
     30 deny icmp host 198.210.10.2 host 110.11.3.3 (2 matches)
-    40 deny tcp host 198.210.10.2 host 200.20.2.2 eq www (4 matches)
+    40 deny tcp host 198.210.10.2 host 100.10.2.2 eq www (4 matches)
     50 permit ospf any any (1247 matches)                                  ← OSPF 정상 ✓
     60 permit ip any any (8920 matches)
 ```
