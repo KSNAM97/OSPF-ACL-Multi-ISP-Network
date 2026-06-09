@@ -1,0 +1,26 @@
+EX4) ISP에서 아래의 조건에 맞게 ACL을 구성하시오
+ .ISP-1은 R1의 내부 네트워크인 198.210.10.1이 R2의 110.11.2.2로의 Telnet 접속을 차단해야한다.
+ .ISP-1은 R1의 내부 네트워크인 198.210.10.1이 R2의 100.10.1.1으로의 HTTP 접속을 차단해야한다.
+ .ISP-1은 R1의 내부 네트워크인 198.210.10.2가 R3의 110.11.3.3으로의 ICMP 통신을 차단해야한다.
+ .ISP-1은 R1의 내부 네트워크인 198.210.10.2가 R3의 100.10.2.2로의 HTTP 접속을 차단해야한다.
+ .나머지 모든 트래픽은 허용해야한다.
+
+
+	#ISP-1
+en
+conf t
+!
+access-list 101 deny tcp host 198.210.10.1  host 110.11.2.2 eq 23
+access-list 101 deny tcp host 198.210.10.1  host 100.10.1.1 eq 80
+access-list 101 deny icmp host 198.210.10.2  host 110.11.3.3
+access-list 101 deny tcp host 198.210.10.2  host 100.10.2.2 eq 80
+access-list 101 permit ip any any
+!
+interface serial 1/1
+ ip access-group 101 in
+!
+end
+!
+wr
+!
+
