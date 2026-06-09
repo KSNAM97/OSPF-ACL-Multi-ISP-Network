@@ -89,9 +89,9 @@ interface f0/0
 
 ```cisco
 ISP-3# show ip ospf neighbor
-Neighbor ID   Pri   State           Dead Time   Address          Interface
-2.2.2.2         0   FULL/DROTHER    00:00:32    210.116.41.66    Fa0/0
-4.4.4.4         0   FULL/DROTHER    00:00:35    210.116.41.68    Fa0/0
+Neighbor ID    Pri   State           Dead Time   Address          Interface
+12.12.12.12      0   FULL/DROTHER    00:00:32    210.116.41.65    Fa0/0
+14.14.14.14      0   FULL/DROTHER    00:00:35    210.116.41.67    Fa0/0
 ```
 
 `Backup Designated Router (ID) 0.0.0.0` 으로 표시되면 BDR이 선출되지 않은 것입니다.
